@@ -1,0 +1,28 @@
+<template>
+     
+     <c-chart type="bar" responsive="true" stylecss="position: relative; margin: auto;" events='["click"]'>
+          <c-dataset labels={labels}>
+               <c-data 
+                    detail={values} 
+                    backgroundcolor={backgroundColors} 
+                    bordercolor={backgroundBorderColors}
+                    borderwidth="1">
+               </c-data>
+          </c-dataset>
+          <c-title 
+               text="# of Approvals in Queue"
+          ></c-title>
+          <!-- <c-legend 
+               position="right"
+          ></c-legend> -->
+          <c-animation 
+               duration="2000" easing="easeInBounce"
+          ></c-animation>
+          <c-cartesian-linear-axis 
+               ticks-beginatzero 
+               axis="y" 
+               position="top">
+          </c-cartesian-linear-axis>
+     </c-chart>
+ 
+ </template>

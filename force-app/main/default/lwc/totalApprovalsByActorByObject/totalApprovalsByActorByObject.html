@@ -1,0 +1,37 @@
+<template>
+    
+     <c-chart type="bar" responsive="true" stylecss="position: relative; margin: auto;" events='["click"]'>
+          <c-dataset labels={labels}>
+               
+               <template for:each={data} for:item="d">
+
+                    <c-data 
+                         key={d.sobjectName}
+                         label={d.sobjectName}
+                         detail={d.count} 
+                         backgroundcolor={d.backgroundcolor} 
+                         stack="1"
+                    ></c-data>
+               </template>
+               
+          </c-dataset>
+          <c-title 
+               text="# of Approvals in Queue By Object"
+          ></c-title>
+          <c-legend 
+               position="right"
+          ></c-legend>
+          <c-animation 
+               duration="2000" easing="easeInBounce"
+          ></c-animation>
+          <c-cartesian-axis 
+               axis="x" 
+               stacked="true" >
+          </c-cartesian-axis>
+          <c-cartesian-axis 
+               axis="y" 
+               stacked="true"
+          ></c-cartesian-axis>
+     </c-chart>
+
+</template>
